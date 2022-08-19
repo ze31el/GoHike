@@ -1,0 +1,32 @@
+.allDataStyle{
+    background-color: rgb(132, 19, 19);
+    color: white;
+}
+
+.hiddenClass{
+    display: none;
+}
+
+.me-auto li a{
+    cursor: pointer;
+}
+
+.visibleClass{
+    display: block;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 80px;
+    z-index: 1000;
+  }
+
+  .navCustomCss img{
+    height: 50px;
+    width: auto;
+    padding-left: 100px;
+    pointer-events: none;
+  }
+  

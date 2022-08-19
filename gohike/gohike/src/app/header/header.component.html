@@ -1,0 +1,94 @@
+<!--navigation bar-->
+
+<nav class="navbar navbar-expand-sm navbar-light bg-light sticky">
+    <div class="container-fluid">
+        <a class="navbar-brand navbar-light navCustomCss" routerLink="/"><img src="./../../assets/images/logo.png" alt="logo"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav me-auto" id="nav-bar">
+                <li class="nav-item navCss">
+                    <a class="nav-link" routerLink="/">Home</a>
+                </li>
+                <li class="nav-item navCss">
+                    <a class="nav-link" routerLink="/trails">Explore the Trails</a>
+                </li>
+                <li class="nav-item navCss">
+                    <a class="nav-link" routerLink="/aboutus">About Us</a>
+                </li>
+                <li class="nav-item navCss">
+                    <a class="nav-link" routerLink="/savedTrails">Saved Trails</a>
+                </li>
+                <li class="nav-item navCss" >
+                    <a class="nav-link" routerLink="/contactUs">Contact Us</a>
+                </li>
+                
+            </ul>
+            <div class="btnAlignment">
+                <button *ngIf="!authService.loggenIn()" class="btn-lg nav-btn" type="button" id="nav-btn" routerLink="/login">SignIn</button>
+                <button *ngIf="!authService.loggenIn()" class="btn-lg"  type="button" id="nav-btn1" routerLink="/signup">Register</button>
+                <button *ngIf="authService.loggenIn()" class="btn-lg " type="button" id="nav-btn2" (click)="authService.logoutUser()" >logout</button>
+            </div>
+        </div>
+            <!-- <form class="d-flex">
+                
+            </form> -->
+    </div>
+    
+    
+</nav>
+
+
+<!-- <div>
+    <span>Search:</span>
+    <input class="form-control" name="searchValue" type="text" [(ngModel)]="searchValue" (ngModelChange)="Search()">
+</div> -->
+
+<!-- <div style="color: black;">
+    <h2 class="text-center" style="padding-bottom: 1em;">Trail data</h2>
+    
+    <table>
+        <tbody>
+            <tr>
+                <button id="allData" class="align-middle" [ngClass]="status ? 'allDataStyle' : ''" (click)="ngOnInit()"> All</button>
+                <button class="align-middle" [ngClass]="statusCity ? 'allDataStyle' : ''" (click)="city()">City</button>
+                <button class="align-middle" [ngClass]="statusActivities ? 'allDataStyle' : ''" (click)="activities()">Activities</button>
+                <button class="align-middle" [ngClass]="statusTrail ? 'allDataStyle' : ''" (click)="trail();">Trail</button>
+                
+            </tr>
+        
+            <tr *ngFor = "let trail of trails"  [ngClass]="showTrails ? 'hiddenClass' : ''" class="align-middle">
+                <td class="align-middle" >Trail Name:{{trail.name}}</td>
+                <td class="align-middle">Location:{{trail.location}}</td>
+                <td class="align-middle">Description:{{trail.description}}</td>
+                <td class="align-middle" >
+                    Activity:
+                  <div *ngFor = "let activityData of trail.activities; let i= index">
+                    <span>{{activityData.length}}</span>
+                    <div *ngIf = "activityData.length == (i+1)">
+                        {{activityData.activity}} 
+                    </div>
+                    <div *ngIf = "activityData.length != (i+1)">
+                        <span>{{activityData.activity}}{{spaceVar}}</span>
+                    </div>   
+                  </div>  
+                </td>
+                
+            </tr>
+            <tr *ngFor = "let trailCity of trailsCity " [ngClass]="showCity ? 'hiddenClass' : ''" class="align-middle  ">
+                <td class="align-middle" >{{trailCity.location}}</td>
+            </tr>
+
+            <tr *ngFor = "let trailName of trailsName " [ngClass]="showName ? 'hiddenClass' : ''" class="align-middle  ">
+                <td class="align-middle" >{{trailName.name}}</td>
+            </tr>
+
+            <tr *ngFor = "let trail of trails" [ngClass]="showActivity ? 'hiddenClass' : ''" class="align-middle" >
+                <div *ngFor = "let activityData of trail.activities">
+                    {{activityData.activity}}
+                </div> 
+            </tr>
+        </tbody>
+    </table>
+</div> -->

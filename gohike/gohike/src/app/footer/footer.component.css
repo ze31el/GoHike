@@ -1,0 +1,19 @@
+.mb-4 {
+    padding-top: 20px;
+}
+#footer {
+    font-size: 14px;
+    font-weight: 500;
+
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.my-5{
+    background-color: white;
+}
+
+.footerNav {
+    cursor: pointer;
+}

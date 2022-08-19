@@ -1,0 +1,283 @@
+<app-header></app-header>
+
+<!--Header-->
+<div id="demo" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="/assets/images/Header.jpg" alt="Header" class="d-block w-100">
+                
+
+            <div class="carousel-caption searchbarSection"  clickOutside (clickOutside)="clickedOutside()">
+                <h1>Welcome {{username | uppercase}}, Explore the place around you</h1>
+                   
+                <div class="input-group mb-3 searchbar"  (click)="toggleMenu()" >
+                    <!-- <input type="text" class="form-control" placeholder="Search by trail, city or activity"> -->
+                    <input class="form-control searchSpace"  name="searchValue" type="text" [(ngModel)]="searchValue" (ngModelChange)="Search()" placeholder="Search by trail, city or activity" style="font-size:14px; padding-left: 20px;">
+                    <button class="btn goBtnStyle" type="submit" routerlink="/detail" style="font-size:16px;">Go</button>
+                </div>
+                <div style="height: 200px; overflow: auto">
+                <table class="menu" *ngIf="isMenuOpened"  >
+                    <tbody>
+                        <tr>
+                            <button id="allData" class="align-middle flex-item-one" [ngClass]="status ? 'allDataStyle' : ''" (click)="ngOnInit()"> All</button>
+                            <button class="align-middle flex-item-four" [ngClass]="statusTrail ? 'allDataStyle' : ''" (click)="trail();">Trail</button>
+                            <button class="align-middle flex-item-two" [ngClass]="statusCity ? 'allDataStyle' : ''" (click)="city()">City</button>
+                            <button class="align-middle flex-item-three" [ngClass]="statusActivities ? 'allDataStyle' : ''" (click)="activities()">Activities</button>
+                            
+                            <!-- <div class="flex-container">
+                            <div id="allData" class="align-middle flex-item-one" [ngClass]="status ? 'allDataStyle' : ''" (click)="ngOnInit()">
+                             All
+                            </div>
+                            <div class="align-middle flex-item-two" [ngClass]="statusCity ? 'allDataStyle' : ''" (click)="city()" >
+                                City
+                            </div>
+                            <div class="align-middle flex-item-three" [ngClass]="statusActivities ? 'allDataStyle' : ''" (click)="activities()">
+                                Activities
+                            </div>
+                            <div class="align-middle flex-item-four" [ngClass]="statusTrail ? 'allDataStyle' : ''" (click)="trail();">
+                                Trail
+                            </div>
+                            </div> -->
+                        </tr>
+                    
+                        <tr routerLink="/trails/{{trail._id}}" *ngFor = "let trail of trails"  [ngClass]="showTrails ? 'hiddenClass' : ''" class="align-middle menu-item" >
+                            <td class="align-middle" >{{trail.name}}</td></tr>
+                            
+                        <tr routerLink="/trails/{{trail._id}}" *ngFor = "let trail of trails"  [ngClass]="showTrails ? 'hiddenClass' : ''" class="align-middle menu-item">
+                            <td class="align-middle"><i class="bi bi-geo-alt-fill"></i>{{trail.location}}</td></tr>
+                            <!-- <td class="align-middle">{{trail.description}}</td> -->
+                            <!-- <td class="align-middle" >
+                               
+                              <div *ngFor = "let activityData of trail.activities; let i= index">
+                                <span>{{activityData.length}}</span>
+                                <div *ngIf = "activityData.length == (i+1)" >
+                                    {{activityData.activity}} 
+                                </div>
+                                <div *ngIf = "activityData.length != (i+1)">
+                                    <span>{{activityData.activity}}{{spaceVar}}</span>
+                                </div>   
+                              </div>  
+                            </td> -->
+                            
+                        
+                        <!-- <tr *ngFor = "let trailCity of trailsCity " [ngClass]="showCity ? 'hiddenClass' : ''" class="align-middle menu-item">
+                            <td class="align-middle" ><i class="bi bi-geo-alt-fill"></i>{{trailCity.location}}</td>
+                        </tr> -->
+
+                        <tr  [ngClass]="showCity ? 'hiddenClass' : ''" class="align-middle">
+                            <div routerLink="/custom/Brampton" class="align-middle menu-item" style="padding:5px"><i class="bi bi-geo-alt-fill"></i>Brampton</div>
+                            <div routerLink="/custom/Waterloo" class="align-middle menu-item" style="padding:5px"><i class="bi bi-geo-alt-fill"></i>Waterloo</div>
+                            <div routerLink="/custom/Toronto" class="align-middle menu-item" style="padding:5px"><i class="bi bi-geo-alt-fill"></i>Toronto</div>
+                            <div routerLink="/custom/Cambridge" class="align-middle menu-item" style="padding:5px"><i class="bi bi-geo-alt-fill"></i>Cambridge</div>
+                            <div routerLink="/custom/Scarborough" class="align-middle menu-item" style="padding:5px"><i class="bi bi-geo-alt-fill"></i>Scarborough</div>
+                            <div routerLink="/custom/Mississauga" class="align-middle menu-item" style="padding:5px"><i class="bi bi-geo-alt-fill"></i>Mississauga</div>
+                            <!-- <div class="align-middle menu-item" style="padding:5px"><i class="bi bi-geo-alt-fill"></i>Milton</div> -->
+                        </tr>
+                        
+                    
+            
+                        <tr routerLink="/trails/{{trailName._id}}" *ngFor = "let trailName of trailsName " [ngClass]="showName ? 'hiddenClass' : ''" class="align-middle menu-item ">
+                            <td class="align-middle" >{{trailName.name}}</td>
+                        </tr>
+                        
+                        <tr [ngClass]="showActivity ? 'hiddenClass' : ''" class="align-middle " >
+                            <div routerLink="/custom/Running" class="align-middle menu-item" style="padding:5px">Running</div> 
+                            <div routerLink="/custom/Walking" class="align-middle menu-item" style="padding:5px">Walking</div> 
+                            <div routerLink="/custom/Road Biking" class="align-middle menu-item" style="padding:5px">Road Biking</div> 
+                            <div routerLink="/custom/Kid friendly" class="align-middle menu-item" style="padding:5px">Kid friendly</div> 
+                            <div routerLink="/custom/Snowshoeing" class="align-middle menu-item" style="padding:5px">Snowshoeing</div> 
+                            <div routerLink="/custom/Stroller friendly" class="align-middle menu-item" style="padding:5px">Stroller friendly</div> 
+                            <!-- <div routerLink="/trails/Running" class="align-middle menu-item" style="padding:5px">Kid friendly</div>  -->
+                            <div routerLink="/custom/Mountain biking" class="align-middle menu-item" style="padding:5px">Mountain biking</div> 
+                        </tr>
+
+                        
+                        <!-- <tr *ngFor = "let trail of trails" [ngClass]="showActivity ? 'hiddenClass' : ''" class="align-middle menu-item" >
+                            <div *ngFor = "let activityData of trail.activities">
+                                {{activityData.activity}}
+                            </div> 
+                        </tr> -->
+
+                        <!-- <tr *ngFor = "let trail of trails" [ngClass]="showActivity ? 'hiddenClass' : ''" class="align-middle menu-item" >
+                                    <div *ngIf="trail.activities[0]?.length == 0; then unfilled else filled">
+                                    </div>
+                                    <ng-template #unfilled >  
+                                        <div class="hiddenClass">
+                            <a>{{trail.activities[0].activity1}}</a><br>
+                            <a>{{trail.activities[0].activity2}}</a><br>
+                            <span>{{trail.activities[0].activity3}}</span><br>
+                            <span>{{trail.activities[0].activity4}}</span><br>
+                            <span>{{trail.activities[0].activity5}}</span><br>
+                            <span>{{trail.activities[0].activity6}}</span><br>
+                            <span>{{trail.activities[0].activity7}}</span><br>
+                            <span>{{trail.activities[0].activity8}}</span>
+                                        </div>
+                                    </ng-template>
+                                    <ng-template #filled>
+                                        <div class="visibleClass">
+                                            <a>{{trail.activities[0].activity1}}</a><br>
+                                        <a>{{trail.activities[0].activity2}}</a><br>
+                                        <span>{{trail.activities[0].activity3}}</span><br>
+                                        <span>{{trail.activities[0].activity4}}</span><br>
+                                        <span>{{trail.activities[0].activity5}}</span><br>
+                                        <span>{{trail.activities[0].activity6}}</span><br>
+                                        <span>{{trail.activities[0].activity7}}</span><br>
+                                        <span>{{trail.activities[0].activity8}}</span>
+                                        </div>
+                        
+                                    </ng-template>
+                        </tr> -->
+
+                    </tbody>
+                </table>
+            </div>
+            </div>
+               
+        </div>
+        
+        
+
+
+    </div>
+</div>
+
+
+<!--Heading-->
+<h2>Discover the Places</h2>
+
+<!-- Responsive Column-->
+<div class="container-fluid mt-4" >
+    <div class="row no-gutters">
+        <div routerLink="/trails/{{trails[0].name}}" class="col trailsCss"  id="col-1">
+            <img src="/assets/images/HeartLakeTrail.jpg" alt= "heart_lake_trail" id="first" class="img-fluid">
+            <div class="content">
+                <h3 class="cap">{{trails[0].name}}</h3>
+                <p class="cap truncate">{{trails[0].description}}</p>
+            </div>
+        </div>
+        <div routerLink="/trails/{{trails[1].name}}" class="col trailsCss">
+            <img src="/assets/images/Brampton.jpg" alt="Brampton to Lake Ontario" id="second" class="img-fluid">
+            <div class="content">
+                <h3 class="cap">{{trails[1].name}}</h3>
+                <p class="cap truncate">{{trails[1].description}}</p>
+            </div>
+        </div>
+        <div routerLink="/trails/{{trails[2].name}}" class="col trailsCss">
+            <img src="/assets/images/CreditValley.jpg" alt="credit valley " id="third" class="img-fluid">
+            <div class="content"> 
+                <h3 class="cap">{{trails[2].name}}</h3>
+                <p class="cap truncate">{{trails[2].description}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Explore more button-->
+<div class="border border-light p-3 mb-4">
+    <div class="text-center">
+        <button type="button" class="btn-xl" routerLink="/trails">Explore More</button>
+    </div>
+</div>   
+
+<!-- Jumbotron-->
+<div class="container-fluid mt-3" id="jumbo">
+    <div class="mt-5 p-5 text-white rounded" id="jumbo-box">
+        <div class="textCss">
+            <h1 class="jumbo-heading">A Trek Worth to Remember</h1> 
+            <p class="jumbo-content">Inspiration and guidance for wherever your trail may lead.</p> 
+            <button type="button" class="btn-xl" routerLink="/trails">View Trails</button>
+        </div>
+    </div>
+</div>
+    
+<!--Activities Heading-->
+<h2 class="activityCss">Activities</h2>
+
+<!--Images-->
+<div class="row" id="img-row">
+    <div routerLink="/custom/Snowshoeing" class="col-md-2 activityCssCursor" >
+        <div class="img-circle" >
+            <a >
+            <img src="/assets/images/homepage_activities/snowshoeing.jpg" alt="Snowshoeing" id="thumbnail" class="img-fluid">
+            <div class="caption">
+                <p>Snowshoeing</p>
+            </div>
+            </a>
+        </div>
+    </div>
+    <div class="col-md-2 activityCssCursor" routerLink="/custom/Mountain biking">
+        <div class="img-circle">
+            <a >
+                <img src="/assets/images/homepage_activities/mountain_biking.jpg" alt="Mountain Biking" id="thumbnail" class="img-fluid">
+                <div class="caption">
+                    <p>Mountain Biking</p>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="col-md-2 activityCssCursor" routerLink="/custom/Running">
+        <div class="img-circle">
+            <a >
+                <img src="/assets/images/homepage_activities/running.jpg" alt="Running" id="thumbnail" class="img-fluid">
+                <div class="caption">
+                    <p>Running</p>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="col-md-2 activityCssCursor" routerLink="/custom/Walking">
+        <div class="img-circle">
+            <a >
+                <img src="/assets/images/CreditValley.jpg" alt="Walking" id="thumbnail" class="img-fluid">
+                <div class="caption">
+                    <p>Walking</p>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="col-md-2 activityCssCursor" routerLink="/custom/Road Biking">
+        <div class="img-circle">
+            <a >
+                <img src="/assets/images/homepage_activities/road_biking.jpg" alt="Road Biking" id="thumbnail" class="img-fluid">
+                <div class="caption">
+                    <p>Road Biking</p>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+
+<!--Articles & Stories-->
+<section>
+    <h2> Articles & Stories</h2>
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <img src="/assets/images/mounphp.jpg" alt="article_1_image" class="img1" >
+            </div>
+            <div class="col-2">
+                <img src="/assets/images/Header.jpg" alt="article_2_image" class="img2">
+            </div>
+            <div class="col-2" id="side-content-1">
+                <h2>Summer Hiking and Backpacking guide1</h2>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptates voluptas dolor aspernatur officiis delectus commodi architecto assumenda laborum, atque cumque?</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6" id="main-content">
+                <h2>Summer Hiking and Backpacking guide2</h2>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptates voluptas dolor aspernatur officiis delectus commodi architecto assumenda laborum, atque cumque?</p>
+            </div>
+            <div class="col-2">
+                <img src="/assets/images/TrekToRemm.jpg" alt="article_3_image" class="img3">
+            </div>
+            <div class="col-2" id="side-content-2">
+                <h2>Summer Hiking and Backpacking guide3</h2>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptates voluptas dolor aspernatur officiis delectus commodi architecto assumenda laborum, atque cumque?</p>
+            </div>
+        </div>
+    </div>  
+</section>
+
+<!-- <app-all-reviews></app-all-reviews> -->
+<app-footer></app-footer>

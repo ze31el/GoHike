@@ -1,0 +1,271 @@
+<!-- <app-header></app-header> -->
+
+<!-- <div class="align-middle" >
+    <span class="align-middle" >{{newTrail.name}}</span>
+    <img [src]="newTrail.imagePath" [alt]="" height="500" width="500" >
+</div> -->
+
+<!-- <div class="carousel-inner">
+    <div class="carousel-item active">
+        <img [src]="newTrail.imagePath" [alt]="" class="d-block w-100" >
+        <div class="carousel-caption"  >
+            <h1>{{newTrail.name}}</h1>
+        </div>
+        <a routerLink="/trails/{{newTrail._id}}"  *ngIf="savedFlag; then filled else unfilled"></a>
+        <ng-template #filled>
+            <i class="bi bi-bookmark-fill" (click) ="onSaveAndDelete();"></i>
+           </ng-template>
+        <ng-template #unfilled>
+            <i class="bi bi-bookmark" (click) ="onSaveAndDelete();"></i>
+        </ng-template> -->
+        <!-- <i class="bi bi-bookmark-fill"></i> -->
+        <!-- <i class="bi bi-bookmark"></i> -->
+    <!-- </div>
+</div> -->
+
+
+<!-- <a routerLink="/review/{{newTrail._id}}"><button class="btn btn-success" > Add Review </button></a> -->
+<!-- <a routerLink="/trails/{{newTrail._id}}"><button class="btn btn-success" (click) ="onSave();"> Save </button></a> -->
+<!-- <app-all-reviews></app-all-reviews>
+<app-footer></app-footer> -->
+
+<app-header></app-header>
+<!-- Header -->
+<div id="demo" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active" style="object-fit: cover;">
+            <img [src]="newTrail.imagePath" [alt]="" class="d-block w-90" id="detail-header">
+            <!-- <div class="carousel-caption" > -->
+                <!-- <h2 class="d-img">{{newTrail.name}}</h2> -->
+                <div class="carousel-caption"  id="detail-caption">
+                    <h1>{{newTrail.name}}</h1>
+                
+                <button class="btn" id="d-header-btn" type="submit">Easy</button>
+                <button class="btn" id="d-header-btn" type="submit">Free</button>
+                <div class="rating">
+                    <input type="radio" name="rating" value="5" id="5"><label for="5">☆</label>
+                    <input type="radio" name="rating" value="4" id="4"><label for="4">☆</label>
+                    <input type="radio" name="rating" value="3" id="3"><label for="3">☆</label>
+                    <input type="radio" name="rating" value="2" id="2"><label for="2">☆</label>
+                    <input type="radio" name="rating" value="1" id="1"><label for="1">☆</label>
+                </div>
+            </div>
+            <a routerLink="/trails/{{newTrail._id}}"  *ngIf="savedFlag; then filled else unfilled"></a>
+            <ng-template #filled>
+                <i class="bi bi-bookmark-fill" (click) ="onSaveAndDelete();"></i>
+            </ng-template>
+            <ng-template #unfilled>
+                <i class="bi bi-bookmark" (click) ="onSaveAndDelete();"></i>
+            </ng-template>
+        </div>
+    </div>
+</div>
+
+<!--Left Paragraph-->
+<div class="row" >
+    <div class="d-para" style="margin: 20px 40px;">
+        <p>
+            {{newTrail.description}}
+        </p>
+    
+        <p class="len">
+            Length: {{newTrail.trail_length}}
+            
+        </p>
+        <h3 class="act">Activities</h3>
+        <div class="act-li" >
+            <li>{{activity[0].activity1}}</li>
+            <li>{{activity[0].activity2}}</li>
+            <li>{{activity[0].activity3}}</li>
+            <li>{{activity[0].activity4}}</li>
+        </div>
+        <div class="act-li" >
+            <li>{{activity[0].activity5}}</li>
+            <li>{{activity[0].activity6}}</li>
+            <li>{{activity[0].activity7}}</li>
+            <li>{{activity[0].activity8}}</li>
+        </div>
+        <div class="act-li" >
+            <li>{{activity[0].activity1}}</li>
+            <li>{{activity[0].activity2}}</li>
+            <li>{{activity[0].activity3}}</li>
+            <li>{{activity[0].activity4}}</li>
+        </div>
+        
+    </div>
+    <div class="mapouter">
+        <div class="gmap_canvas">
+            <iframe width="500" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+            <a href="https://fmovies-online.net"></a><br>
+            <a href="https://www.embedgooglemap.net">insert google map</a><style></style>
+        </div>
+    </div>
+    <!-- <div class="mapouter">
+        <div class="gmap_canvas">
+            <iframe width="500" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=heart%20lake%20trail&t=&z=13&ie=UTF8&iwloc=&output=embed" 
+            frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+            <a href="https://123movies-to.org">123movies</a>
+            <a href="https://www.embedgooglemap.net">how to embed google maps in html</a>
+        </div>
+    </div> -->
+
+    
+</div>
+
+<!--Photos-->
+<h2 class="photos">Photos</h2>
+<div class="row" id="p-rw" style="margin: 0 40px;">
+    <div class="col-md-3">
+        <div class="d-img">
+            <a href="/assets/images/CreditValley.jpg" target="_blank">
+                <img src="/assets/images/CreditValley.jpg" alt="CreditValley" id="thumbnail" class="img-fluid">
+            </a>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="d-img">
+            <a href="/assets/images/HeartLakeTrail.jpg" target="_blank">
+                <img src="/assets/images/HeartLakeTrail.jpg" alt="HeartLake" id="thumbnail" class="img-fluid">
+            </a>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="d-img">
+            <a href="/assets/images/Brampton.jpg" target="_blank">
+                <img src="/assets/images/Brampton.jpg" alt="Brampton" id="thumbnail" class="img-fluid">
+            </a>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="d-img">
+            <a href="/assets/images/Hiking.jpg" target="_blank">
+                <img src="/assets/images/Hiking.jpg" alt="Hiking" id="thumbnail" class="img-fluid" style="height: 225px;">
+                </a>
+            </div>
+    </div>
+</div>
+<!--Reviews-->
+<div class="row" id="r-row">
+    <div class="col-3" id="col-left">
+        <h2 class="reviews">Reviews</h2>
+        <span class="span">4 out of 5 </span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star"></span>
+
+        <div class="row" id="d-review">
+        <div class="side">
+            <div>5 star</div>
+        </div>
+        <div class="middle">
+            <div class="bar-container">
+            <div class="bar-5"></div>
+            </div>
+        </div>
+        <div class="side right">
+            <div>48%</div>
+        </div>
+        <div class="side">
+            <div>4 star</div>
+        </div>
+        <div class="middle">
+            <div class="bar-container">
+            <div class="bar-4"></div>
+            </div>
+        </div>
+        <div class="side right">
+            <div>40%</div>
+        </div>
+        <div class="side">
+            <div>3 star</div>
+        </div>
+        <div class="middle">
+            <div class="bar-container">
+            <div class="bar-3"></div>
+            </div>
+        </div>
+        <div class="side right">
+            <div>25%</div>
+        </div>
+        <div class="side">
+            <div>2 star</div>
+        </div>
+        <div class="middle">
+            <div class="bar-container">
+            <div class="bar-2"></div>
+            </div>
+        </div>
+        <div class="side right">
+            <div>5%</div>
+        </div>
+        <div class="side">
+            <div>1 star</div>
+        </div>
+        <div class="middle">
+            <div class="bar-container">
+            <div class="bar-1"></div>
+            </div>
+        </div>
+        <div class="side right">
+            <div>2%</div>
+        </div>
+        </div>
+        <button routerLink="/review/{{newTrail._id}}" class="review-btn">WRITE A REVIEW</button>
+    </div>
+    <div class="col" id="col-right">
+    <!-- Review by user -->
+    <div class="user-review">
+        <div class="row">
+            <div><img src="https://i.imgur.com/Mcd6HIg.jpg" alt="user-review-img" class="profile-pic">
+            <div class="u-name"><h4>Emily</h4>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+                <span class="grey-text">10 Jul 2022</span>
+            </div>
+        </div>
+        </div>
+        <div class="row pb-3" id="rev-p">
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Optio nihil, beatae voluptate, unaque esse, maxime vero cumque harum dolorum architecto dignissimos enim! </p>
+        </div>
+        <hr style="width: 80%;">
+        <div class="row">
+            <div><img src="https://i.imgur.com/Mcd6HIg.jpg" alt="user-review-img" class="profile-pic">
+            <div class="u-name"><h4>Emily</h4>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+                <span class="grey-text">10 Jul 2022</span>
+            </div>
+        </div>
+        </div>
+        <div class="row pb-3" id="rev-p">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium sit quaerat accusamus iure, minus, pariatur</p>
+        </div>
+        <hr style="width: 80%;">
+        <div class="row">
+            <div><img src="https://i.imgur.com/Mcd6HIg.jpg" alt="user-review-img" class="profile-pic">
+            <div class="u-name"><h4>Emily</h4>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+                <span class="grey-text">10 Jul 2022</span>
+            </div>
+        </div>
+        </div>
+        <div class="row pb-3" id="rev-p">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates praesentium accusamus debitis, eola, reprehenderit doloremque ipsa explicabo fuga et harum itaque! Aspernatur!</p>
+        </div>
+    </div>
+</div>
+</div>
+
+<app-footer></app-footer>

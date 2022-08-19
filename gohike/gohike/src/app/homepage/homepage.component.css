@@ -1,0 +1,585 @@
+
+/* searchbar css */
+
+
+.hiddenClass{
+    display: none;
+}
+
+
+
+/* searchbar dropdown */
+.menu{
+    background-color: white;
+    color: black;
+    height: 200px;
+    width: 700px;
+    padding: 50px;
+    overflow: scroll;
+    overflow-x: hidden;
+    border-radius: 6px;
+    overflow: scroll;
+}
+
+.menu-item{
+
+    cursor: pointer;
+}
+
+.menu-item:hover{
+
+    text-decoration: underline;
+}
+
+.searchbarSection{
+    bottom: 15em;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 700px;
+
+}
+
+.searchbarSection h1{
+    font-weight: 700;
+    font-size: 36px;
+    padding-bottom: 20px;
+    
+}
+.searchbar{
+    width: 700px;
+}
+.searchSpace, .goBtnStyle{
+    height: 50px;
+    border-radius: 25px; 
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    font-size: 30px;
+    text-align: center;
+  }
+
+.flex-item-one, .flex-item-two, .flex-item-three, .flex-item-four {
+    background-color: #e5e5e5;
+    padding: 10px;
+    width: 25%;
+    border-style: none solid none none;
+}
+.allDataStyle{
+    background-color: #fb5607;
+    color: white;
+}
+.truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* number of lines to show */
+            line-clamp: 2;
+    -webkit-box-orient: vertical;
+ }
+ .trailsCss{
+    cursor: pointer;
+ }
+/* .searchbar{
+    height: 50px;
+} */
+
+
+/* tap css */
+/* img {
+    height: 640px;
+}
+
+#demo {
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    margin: 0;
+    padding: 0;
+}
+
+.btn {
+    background-color: #fb5607;
+    border-color: #fb5607;
+    color: #fff;
+}
+
+h2 {
+    text-align: center;
+    padding-top: 25px;
+    padding-bottom: 0;
+    font-weight: bold;
+}
+
+.images {
+    display: flex;
+    justify-content: space-around ;
+    height: 400px;
+    width: 400px;
+}
+
+.col {
+    position: relative;
+} */
+
+/* .col .content {
+    position: absolute;
+    bottom: 0;
+    right: 99px;
+    left: 7px;
+    background: rgb(0, 0, 0); 
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    padding: 5px;
+} */
+
+/* .btn-lg{
+    background-color: #fb5607;
+    color: #fff;
+    border-color: #fb5607;
+    border-radius: 15px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+#jumbo {
+    height: 500px;
+    background-image: url("/assets/images/TrekToRemm.jpg");
+    background-color: transparent;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.jumbo-heading {
+    font-size: 50px;
+}
+
+.jumbo-content {
+    font-size: 20px;;
+}
+
+#thumbnail {
+    height: 200px;
+    width: 300px;
+}
+
+.thumbnail {
+    display: flex;
+    justify-content: space-around;
+}
+
+.caption p {
+    text-decoration: none;
+    color: #333;
+}
+
+section {
+    background-image: url("/assets/images/MountainBiking.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 480px;
+}
+
+.row {
+    gap: 0;
+}
+
+.img1{
+    height: 200px;
+    width: 480px;
+} 
+
+.img2 {
+    height: 200px;
+    width: 300px;
+}
+
+.img3 {
+    height: 200px;
+    width: 300px;
+    left: 400px;
+    right: 200px;
+}
+
+#main-content {
+    background-color: #fff;
+    width: 480px;
+    left: 5px;
+}
+
+#side-content-1 {
+    background-color: #fff;
+    width: 400px;
+    right: 25px;
+}
+
+#side-content-2 {
+    background-color: #fff;
+} */
+
+/* new css */
+#header-img {
+    margin: 0 0 0 0;
+    width: 100%;
+    height: 650px;
+    border: 0;
+}
+.h-img {
+    margin-bottom: 40px;
+    font-size: 30px;
+}
+input {
+    width: 200px;
+    border-radius: 15px 15px 15px 15px;
+}
+.btn {
+    background-color: #fb5607;
+    border-color: #fb5607;
+    color: #fff;
+    width: 55px;
+}
+.carousel-caption {
+    display: flexbox;
+    justify-content: center;
+    top: 35%;
+}
+
+h2 {
+    text-align: center;
+    padding-top: 25px;
+    padding-bottom: 0;
+    font-weight: bold;
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+.img-fluid {
+    display: flex;
+    background: rgb(0, 0, 0); /* Fallback color */
+    background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+    justify-content: space-around ;
+    height: 470px;
+    width: 380px;
+    border-radius: 6px;
+}
+#col-1 {
+    margin-left: 60px;
+}
+.col {
+    position: relative;
+}
+.col .content {
+    position: absolute;
+    bottom: 0;
+    width:380px;
+    background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+    color: #fff;
+    padding: 10px;
+}
+
+.btn-xl{
+    background-color: #fb5607;
+    color: #fff;
+    border-color: #fb5607;
+    border-radius: 25px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 14px;
+    margin-top: 20px;
+    padding: 12px;
+}
+
+#jumbo {
+    height: 500px;
+    background-image: url("/assets/images/TrekToRemm.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.jumbo-heading {
+    font-size: 50px;
+}
+.jumbo-content {
+    font-size: 20px;
+}
+#jumbo-box {
+    background-image: linear-gradient(to left, rgba(20, 131, 221, 0), rgba(20, 131, 221, 0.3));
+    height: 470px;
+}
+.textCss{
+    margin-left: 80px;
+}
+.textCss h1{
+    font-weight: 700;
+}
+.activityCss{
+    font-size: 30px;
+    font-weight: 700;
+    margin-top: 20px;
+}
+#img-row {
+    display: flex;
+    padding: 20px 60px 60px 60px;
+    font-family: 'Open Sans', sans-serif;
+}
+#img-row .img-circle p{
+    font-size: 16px;
+    font-weight: 700;
+}
+.activityCssCursor{
+    cursor: pointer;
+}
+.col-md-2 {
+    flex: 13.33%;
+    padding: 5px;
+    justify-content: space-around;
+}
+#thumbnail {
+    height: 200px;
+    width: 300px;
+    margin: 10px;
+}
+.thumbnail {
+    display: flex;
+    justify-content: space-around;
+    margin: 10px;
+}
+#thumbnail a {
+    margin: 20px;
+    left: 200px;
+}
+.caption p {
+    color: #333;
+    text-align: center;
+    font-size: 12px;
+}
+.img-circle a {
+    text-decoration: none;
+}
+
+section {
+    background-image: url("/assets/images/MountainBiking.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 680px;
+    margin: 0;
+}
+.img1{
+    height: 250px;
+    width: 500px;
+} 
+.img2, .img3 {
+    height: 250px;
+    width: 400px;
+    
+}
+#main-content {
+    background-color: #fff;
+    height: 250px;
+    width: 500px;
+    margin-right: 160px;
+    padding: 10px;
+}
+#side-content-1, #side-content-2  {
+    background-color: #fff;
+    height: 250px;
+    width: 300px;  
+    margin-left: 110px; 
+    padding: 10px;
+}
+
+@media only screen and (max-width: 768px) {
+    #header-img {
+        width: 100%;
+        height: 250px;
+    }
+    .h-img {
+        margin-bottom: 20px;
+        font-size: 15px;
+    }
+    input {
+        width: 50px;
+        border-radius: 25px 25px 25px 25px;
+    }
+    .btn {
+        background-color: #fb5607;
+        border-color: #fb5607;
+        color: #fff;
+        width: 55px;
+        border-radius: 25px 25px 25px 25px;
+    }
+    .carousel-caption {
+        display: flexbox;
+        justify-content: center;
+        bottom: 20%;
+    }
+
+    h2 {
+        text-align: center;
+        padding-top: 25px;
+        padding-bottom: 0;
+        font-weight: bold;
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    .img-fluid {
+        height: 350px;
+        width: 350px;
+        margin-left: 20px;
+    }
+    .col {
+        display: flex;
+        flex: 53.33%;
+        justify-content: left;
+    }
+    #col-2, #col-3 {
+        margin-top: 20px;
+        margin-left: 60px;
+    }
+    .col .content {
+        position: absolute;
+        bottom: 0;
+        /* width:82%; */
+        background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+        color: #fff;
+        padding: 10px;
+        left: 20px;
+    }
+
+    #jumbo-box{
+        background-image: none;
+        height: 0;
+    }
+
+    .btn-xl{
+        background-color: #fb5607;
+        color: #fff;
+        border-color: #fb5607;
+        border-radius: 25px;
+        text-align: center;
+        font-weight: bold;
+        font-size: 14px;
+        margin-top: 20px;
+        padding: 10px;
+    }
+
+    #jumbo {
+        height: 300px;
+        background-image: url("/assets/images/TrekToRemm.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    .jumbo-heading {
+        font-size: 20px;
+    }
+    .jumbo-content {
+        font-size: 12px;
+    }
+    #jumbo-box {
+        background-image: linear-gradient(to left, rgba(20, 131, 221, 0), rgba(20, 131, 221, 0.3));
+    }
+
+    #img-row {
+        display: flex;
+        justify-content: center;
+        margin-top: 0;
+        padding-top: 0;
+    }
+    .col-md-2 {
+        flex: 53.33%;
+        padding: 5px;
+        justify-content: space-around;
+    }
+    #thumbnail {
+        height: 250px;
+        width: 400px;
+        margin: 10px;
+    }
+    .thumbnail {
+        display: flex;
+        justify-content: space-around;
+        margin: 10px;
+    }
+    #thumbnail a {
+        margin: 20px;
+        left: 200px;
+    }
+    .caption p {
+        color: #333;
+        text-align: center;
+        font-size: 12px;
+    }
+    .img-circle a {
+        text-decoration: none;
+    }
+
+    #sec-con {
+        display: flex;
+        flex-direction: column;
+        flex: 53.33%;
+    }
+    section {
+        background-image: url("/assets/images/MountainBiking.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 710px;
+        margin: 0;
+        opacity: 0.8;
+    }
+    .img1{
+        height: 150px;
+        width: 200px;
+        padding: 10px;
+        border: 0;
+    } 
+    .img2 {
+        height: 150px;
+        width: 220px;
+        padding: 10px;
+        border: 0;
+    }
+    .img3 {
+        height: 190px;
+        width: 450px;
+        padding: 10px;
+        border: 0;
+    }
+    #main-content {
+        background-color: #fff;
+        height: 100px;
+        width: 390px;  
+        font-size: 10px;
+        text-align: left;
+        padding-left: 0;
+        margin-left: 50px;
+    }
+    #main-content h2, #side-content-1 h2, #side-content-2 h2 {
+        font-size: 12px;
+        padding: 0;
+    }
+    #side-content-1 {
+        background-color: #fff;
+        height: 100px;
+        width: 390px;  
+        font-size: 10px;
+        text-align: left;
+        padding-left: 0;
+        margin-left: 50px;
+        margin-bottom: 5px;
+    }
+    #side-content-2  {
+        background-color: #fff;
+        height: 100px;
+        width: 390px;  
+        font-size: 10px;
+        text-align: left;
+        padding-left: 0;
+        margin-left: 50px;
+    }
+
+}

@@ -1,0 +1,145 @@
+<!-- <app-header></app-header>
+<div id="demo" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="/assets/images/Header.jpg" alt="Header" class="d-block w-100">
+            <div class="carousel-caption"  >
+                <h2>Explore the trails</h2>
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer> -->
+
+<app-header></app-header>
+<!-- Header -->
+<div id="demo" class="carousel slide" data-bs-ride="carousel">
+    <div class="trail-container">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="/assets/images/trailHeader.jpg" alt="Header" class="d-block w-100" id="trail-header">
+                <h2 class="trail-caption">Explore the Trails</h2>
+        </div>
+    </div>
+</div>
+</div>
+
+<!--Discover the Places-->
+<h2> Discover the Places</h2>
+
+<!--Submenu-->
+<!-- <nav class="navbar navbar-expand-lg navbar-light bg-light" id="sub-menu">
+    <ul class="nav navbar-nav">
+        <li><a href="#">All</a></li>
+        <li><a href="#">Parks</a></li>
+        <li><a href="#">Cities</a></li>
+        <li><a href="#">Trails</a></li>
+        <li><a href="#">Activites</a></li>
+    </ul>
+</nav> -->
+<!-- <h2>{{6}}</h2> -->
+
+<!--Image cards-->
+
+<div class="grid-row" style="margin: 0 50px;">
+    <div class="grid-col trailCardCss" *ngFor="let trail of fetchedTrails" routerLink="/trails/{{trail._id}}">
+        <div class="card" style="max-width: 20rem;">
+            <img width="400" style="object-fit: cover; height: 500px;"[src]="trail.imagePath" [alt]="" class="d-block w-90" id="detail-header">
+            <div class="card-body">
+                <h1>{{trail.name}}</h1>
+                <p class="truncate">{{trail.description}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--FAQs-->
+<div class="row">
+    <div class="col-6">
+        <h2 class="faq">FAQs</h2>
+        <div class="accordion">
+            <!--Item 1-->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        How does it work?
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas in felis dignissim, imperdiet nulla vitae, condimentum nulla. Ut scelerisque a nisl sit amet facilisis. Etiam blandit iaculis tellus, vitae condimentum leo congue a. Vivamus in vehicula massa. Pellentesque libero libero, commodo lacinia volutpat non, tincidunt at lectus. Maecenas ipsum turpis, viverra vitae lacus eu, fringilla ultricies erat. Aenean hendrerit maximus sodales.
+                    </div>
+                </div>
+            </div>
+            <!--Item 2-->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        Lorem
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        Quisque sapien augue, ornare id leo a, tristique elementum justo. Praesent non nulla sagittis, sollicitudin justo id, varius erat. Nunc sed pharetra nisl. Cras et suscipit felis, in lacinia sapien. Integer venenatis sagittis massa, eu eleifend nibh venenatis in. Pellentesque a aliquet urna. Curabitur tortor metus, ultrices sed mi at, sagittis imperdiet turpis. Suspendisse nec luctus nunc. Fusce in arcu quis lacus mollis ultrices.
+                    </div>
+                </div>
+            </div>
+            <!--Item 3-->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        Ipsum
+                    </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        Praesent nec ipsum scelerisque dui condimentum pellentesque eu at lectus. Vivamus purus purus, bibendum in vestibulum ac, pharetra sit amet sapien. Nunc luctus, orci vel luctus cursus, nibh nisl ullamcorper ipsum, eu malesuada arcu augue id nisi. In auctor mi ac ante tincidunt tincidunt.
+                    </div>
+                </div>
+            </div>
+            <!--Item 4-->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFour">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                        Lorem
+                    </button>
+                </h2>
+                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas in felis dignissim, imperdiet nulla vitae, condimentum nulla. Ut scelerisque a nisl sit amet facilisis. Etiam blandit iaculis tellus, vitae condimentum leo congue a. Vivamus in vehicula massa. Pellentesque libero libero, commodo lacinia volutpat non, tincidunt at lectus. Maecenas ipsum turpis, viverra vitae lacus eu, fringilla ultricies erat. Aenean hendrerit maximus sodales.
+                    </div>
+                </div>
+            </div>
+            <!--Item 5-->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFive">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                        Ipsum
+                    </button>
+                </h2>
+                <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas in felis dignissim, imperdiet nulla vitae, condimentum nulla. Ut scelerisque a nisl sit amet facilisis. Etiam blandit iaculis tellus, vitae condimentum leo congue a. Vivamus in vehicula massa. Pellentesque libero libero, commodo lacinia volutpat non, tincidunt at lectus. Maecenas ipsum turpis, viverra vitae lacus eu, fringilla ultricies erat. Aenean hendrerit maximus sodales.
+                    </div>
+                </div>
+            </div>
+            <!--Item 6-->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingSix">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                        Lorem
+                    </button>
+                </h2>
+                <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas in felis dignissim, imperdiet nulla vitae, condimentum nulla. Ut scelerisque a nisl sit amet facilisis. Etiam blandit iaculis tellus, vitae condimentum leo congue a. Vivamus in vehicula massa. Pellentesque libero libero, commodo lacinia volutpat non, tincidunt at lectus. Maecenas ipsum turpis, viverra vitae lacus eu, fringilla ultricies erat. Aenean hendrerit maximus sodales.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-4">
+        <img src="assets/images/TrekToRemm.jpg" alt="Trek Image" class="trek-img">
+    </div>
+</div>
+<app-footer></app-footer>

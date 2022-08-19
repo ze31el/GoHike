@@ -1,0 +1,28 @@
+<app-header></app-header>
+<!-- Header -->
+<div id="demo" class="carousel slide" data-bs-ride="carousel">
+    <div class="trail-container">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="/assets/images/trailHeader.jpg" alt="Header" class="d-block w-100" id="trail-header">
+                <h2 class="trail-caption">Saved Trails</h2>
+        </div>
+    </div>
+    </div>
+</div>
+
+<h2>My Favorites</h2>
+
+<div class="grid-row" style="margin: 0 50px;">
+    <div class="grid-col trailCardCss" *ngFor="let trail of trails" >
+        <div class="card" style="max-width: 20rem;" routerLink="/trails/{{trail.name}}"> 
+            <img width="400" style="object-fit: cover; height: 500px;"[src]="trail.imagePath" [alt]="" class="d-block w-90" id="detail-header">
+            <div class="card-body">
+                <h1>{{trail.name}}</h1>
+                <p class="truncate">{{trail.description}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>
